@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Meds Check</title>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+    color: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+    height: 100%;
+  }
+  .wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 12px;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  h1 {
+    font-size: 1.1em;
+    font-weight: 600;
+    margin: 0 0 18px 0;
+    line-height: 1.3;
+  }
+  a.btn {
+    display: block;
+    width: 80%;
+    max-width: 220px;
+    padding: 16px 0;
+    margin: 8px 0;
+    border-radius: 14px;
+    font-size: 1.15em;
+    font-weight: 700;
+    text-decoration: none;
+    color: #000;
+  }
+  .yes { background: #30d158; }
+  .no  { background: #ff453a; }
+  .done {
+    font-size: 1.2em;
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+<div class="wrap" id="wrap">
+  <h1>Did you take your meds?</h1>
+  <a class="btn yes" href="#" id="yesBtn">Yes</a>
+  <a class="btn no" href="#" id="noBtn">No</a>
+</div>
+
+<script>
+  var FORM_BASE = "https://docs.google.com/forms/d/e/1FAIpQLSdRR1adjKLX2XKQCySMl1lNNc6tjtuLr5kVInAowkcFE8D0aw/formResponse?usp=pp_url&entry.1329468233=";
+
+  function submitAnswer(answer) {
+    document.getElementById('wrap').innerHTML = '<div class="done">✅ Logged: ' + answer + '</div>';
+    // Fire the submit in the background so the confirmation shows instantly
+    fetch(FORM_BASE + answer, { mode: 'no-cors' }).catch(function(){});
+  }
+
+  document.getElementById('yesBtn').addEventListener('click', function(e) {
+    e.preventDefault();
+    submitAnswer('Yes');
+  });
+  document.getElementById('noBtn').addEventListener('click', function(e) {
+    e.preventDefault();
+    submitAnswer('No');
+  });
+</script>
+</body>
+</html>
