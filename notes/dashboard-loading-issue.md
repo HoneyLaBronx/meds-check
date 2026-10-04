@@ -35,3 +35,22 @@ Working fine: Trackers links, Overdue habits list, Horoscope, crypto prices.
    broken source).
 5. Compare with how it looks on desktop – if it loads there, it's a mobile
    recalculation issue; if not, it's the formulas/sources themselves.
+
+## Related: Apple Watch habit tracker work
+
+Same spreadsheet family as the habit tracker sheet worked on in the Claude Code
+session "Apple Watch habit tracker with smart skip logic" (last worked
+2026-09-03, on the laptop). The dashboard's **Habit Tracker** link and
+**OVERDUE** list pull from that sheet, and those parts work fine. The
+"Loading..." cells are Bills/Birthdays/Projects/Leads, so they probably come
+from a different source.
+
+Where that session left off:
+1. Finish the AU-column format touch-up (copy `AU21` → Paste special → Format
+   only into `AU22:AU58`) on Template + the other 11 month tabs (September is
+   already done).
+2. Then Daily/Weekly/Monthly are complete everywhere → next phase is the
+   Year Overview tab (Quarterly / Semi-Annual / Annual).
+
+When you're back on the laptop, you can resume that session and paste this
+note in, or tackle both in one session.
